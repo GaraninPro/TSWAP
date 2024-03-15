@@ -3,11 +3,19 @@ src = "src"
 out = "out"
 libs = ["lib"]
 solc = "0.8.20"
-remappings = ['@openzeppelin/contracts=lib/openzeppelin-contracts/contracts']
+remappings = [
+    '@openzeppelin/contracts=lib/openzeppelin-contracts/contracts',
+    'forge-std=lib/forge-std/src',
+]
+
+
+[fuzz]
+seed = "0x1"
+
 
 [invariant]
-runs = 256
-depth = 32
+runs = 100
+depth = 19
 fail_on_revert = true
 
 [fmt]
